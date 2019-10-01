@@ -1,0 +1,40 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+@using System.Data;
+Welcome to your new app.
+<EjsGrid DataSource="@lstObj">
+    <GridColumns>
+        @foreach (DataColumn col in dtFlat.Columns)
+        {
+            if (col.ColumnName == "OrderDate")
+            {
+                <GridColumn Field=@col.ColumnName Format="yMd" Width="100px" />
+            }
+            else
+            {
+                <GridColumn Field=@col.ColumnName IsPrimaryKey="@(col.ColumnName == "OrderID")" Width="100px" />
+            }
+        }
+    </GridColumns>
+</EjsGrid>
+
+@code{
+    DataTable dtFlat;
+
+    List<System.Dynamic.ExpandoObject> lstObj;
+    protected override async Task OnInitializedAsync()
+    {
+        dtFlat = OrdersDetails.GetAllRecords();
+        // Rows of dynamic object
+        lstObj = new List<System.Dynamic.ExpandoObject>();
+        foreach (DataRow row in dtFlat.Rows)
+        {
+            System.Dynamic.ExpandoObject e = new System.Dynamic.ExpandoObject();
+            foreach (DataColumn col in dtFlat.Columns)
+            e.TryAdd(col.ColumnName, row.ItemArray[col.Ordinal]);
+
+            lstObj.Add(e);
+        }
+    }
+}
