@@ -1,4 +1,4 @@
-# Blazor DataGrid - Bind DataTable to Grid
+# Blazor DataGrid - Bind DataTable
 
 This example shows that how to bind a DataTable to Syncfusion Blazor DataGrid.
 
