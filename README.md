@@ -2,7 +2,7 @@
 
 ## Overview
 
-This sample demonstrates how to bind a `System.Data.DataTable` directly to a Syncfusion Blazor DataGrid (`SfGrid`). Instead of using a strongly typed collection, the example creates and populates a `DataTable` and assigns it as the Grid's data source so that the Grid can automatically generate and display rows from tabular data. This approach is useful when data is obtained from legacy components, database APIs, reporting systems, or other sources that expose results as `DataTable` objects rather than typed business models.
+This sample demonstrates how to bind a `System.Data.DataTable` directly to a Syncfusion [Blazor DataGrid](https://www.syncfusion.com/blazor-components/blazor-datagrid). Instead of using a strongly typed collection, the example creates and populates a `DataTable` and assigns it as the Grid's data source so that the Grid can automatically generate and display rows from tabular data. This approach is useful when data is obtained from legacy components, database APIs, reporting systems, or other sources that expose results as `DataTable` objects rather than typed business models.
 
 ## Key Features
 
